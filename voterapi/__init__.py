@@ -195,7 +195,9 @@ def _relative_uri(profile, include_address):
         dict([k, v.encode('utf-8')] for k, v in params.items()))
 
 def _batch_history_post(request_list):
-    if settings.USE_FAKE_VOTIZEN_API:
+    if settings.DISABLE_VOTIZEN_API:
+        return 200, []
+    elif settings.USE_FAKE_VOTIZEN_API:
         elems = []
         for request in request_list:
             votizen_id = re.search(
@@ -218,7 +220,9 @@ def _batch_history_post(request_list):
         return response.status_code, response.json
 
 def _batch_post(request_list):
-    if settings.USE_FAKE_VOTIZEN_API:
+    if settings.DISABLE_VOTIZEN_API:
+        return 200, []
+    elif settings.USE_FAKE_VOTIZEN_API:
         elems = []
         for request in request_list:
             objects = []
@@ -319,7 +323,9 @@ def fetch_voter_from_fb_profile(fb_profile):
     return v
 
 def _fetch_voter(**kwargs):
-    if settings.USE_FAKE_VOTIZEN_API:
+    if settings.DISABLE_VOTIZEN_API:
+        return None
+    elif settings.USE_FAKE_VOTIZEN_API:
         time.sleep(0.3)
         if choice([True, True, False]):
             return Voter("".join([choice(string.letters) for i in range(10)]),

@@ -36,7 +36,7 @@ WONT_VOTE_REASONS = (
     # Translators: Not voting because I will not be old enough
     ("not_17", _("Won't be 17 yet")),
 
-    # Translators: Not voting because I am not an American citizen
+    # Translators: Not voting because I am not an citizen
     ("not_citizen", _("Not a citizen")),
 
     # Translators: Not voting because I do not want to
@@ -558,7 +558,7 @@ class LastAppNotification(models.Model):
         if self.user.unsubscribed or not self.user.email:
             return
         verb = "voted" if for_voted else "pledged"
-        url = "https://apps.facebook.com/votewithfriends/?target=/invite_friends_2/{0}".format(verb)
+        url = settings.FACEBOOK_CANVAS_PAGE + "?target=/invite_friends_2/{0}".format(verb)
         context = {
             "first_sentence": first_sentence,
             "for_voted": for_voted,
@@ -577,7 +577,7 @@ class LastAppNotification(models.Model):
             text_body,
             settings.EMAIL_SENDER,
             [self.user.email],
-            headers={ 'Reply-To': 'info@votewithfriends.net',
+            headers={ 'Reply-To': 'team@votewithfriends.org.nz',
                       "From": "Vote with Friends <{0}>".format(settings.EMAIL_SENDER)})
         msg.attach_alternative(html_body, "text/html")
         msg.send(fail_silently=False)

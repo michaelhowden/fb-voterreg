@@ -38,7 +38,7 @@ $(function() {
         }
         FB.ui(
             {
-                "message": "The 2012 election is almost here -- are you going to vote?  This app gets you everything you need, and helps you recruit your friends.",
+                "message": "The 2013 Local Election are almost here -- are you going to vote?  This app gets you everything you need, and helps you recruit your friends.",
                 "method": "apprequests",
                 "to": fbuids
             },

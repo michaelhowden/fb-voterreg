@@ -7,12 +7,12 @@
 
 {{ FACEBOOK_CANVAS_PAGE }}?target={{ invite_friends_url }}
 
-There's only {{num_days}} days until the election. If you care about what happens, you need to start mobilizing!
+There's only {{num_days}} days until the voting closes. If you care about what happens, you need to start mobilizing!
 
 See your current friend mobilization stats here: {{ FACEBOOK_CANVAS_PAGE }}
 
 Sincerely,
-Center for Rights & Vote with Friends
+Vote with Friends NZ
 
 --
 

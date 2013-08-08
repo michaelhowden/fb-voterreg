@@ -30,7 +30,7 @@ class FriendQuerySet(QuerySet):
     def all(self):
         """
         Prefilters all users matching the following criteria:
-        - User is younger than 18 years old on 11/06/2012
+        - User is younger than 18 years old on 2013-10-12
 
         Also keeps track of whether this operation has already been run on
         this QuerySet instance, ensuring that the SQL clauses aren't duplicated
@@ -39,7 +39,7 @@ class FriendQuerySet(QuerySet):
         all_friends = super(FriendQuerySet, self).all()
 
         if not self.prefiltered:
-            election_day = datetime(year=2012, month=11, day=6)
+            election_day = datetime(year=2013, month=10, day=12)
             eligibility_date = self._years_ago(18, election_day)
             all_friends = all_friends.filter(
                 Q(birthday__isnull=True) |

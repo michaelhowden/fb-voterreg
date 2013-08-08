@@ -1,7 +1,7 @@
 {{first_sentence}}! See who else has {{ verb }} at {{ url }}.
 
 Sincerely,
-Center for Rights & Vote with Friends
+Vote with Friends NZ
 
 --
 

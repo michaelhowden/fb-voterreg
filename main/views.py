@@ -45,8 +45,8 @@ class OGObjectView(TemplateView):
 
         environment = environ.get("RACK_ENV", 'dev')
         namespace_map = {
-            'dev': '-dev',
-            'staging': '-stag',
+            'dev': '-d',
+            'staging': '-s',
             'production': '',
         }
         context['og_namespace'] = namespace_map[environment]
@@ -66,6 +66,7 @@ class ShareView(TemplateView):
         context['canvas_url'] = settings.FACEBOOK_CANVAS_PAGE
         context['share_url'] = settings.SHARING_URL
         context['facebook_app_id'] = settings.FACEBOOK_APP_ID
+        context['facebook_canvas_page'] = settings.FACEBOOK_CANVAS_PAGE
         return context
 
 
@@ -241,6 +242,8 @@ def index(request):
 
 def my_vote(request):
     user = User.objects.get(fb_uid=request.facebook["uid"])
+    #import fb_friends
+    #fb_friends.fetch_friends(request.facebook["uid"], request.facebook["access_token"])
     after = request.session.get('after', None)
     block_id = request.session.get('block_id', None)
     force = 'force' in request.GET
@@ -386,7 +389,7 @@ def fetch_me(request):
 
 def _send_join_email(user, request):
     today = date.today()
-    num_days = (date(2012, 11, 6) - today).days
+    num_days = (date(2013, 10, 12) - today).days
     invite_friends_url = reverse('main:invite_friends_2')
     unsubscribe_url = reverse('main:unsubscribe')
     context = {
@@ -409,7 +412,7 @@ def _send_join_email(user, request):
             text_body,
             settings.EMAIL_SENDER,
             [user.email],
-            headers={ 'Reply-To': 'info@votewithfriends.net',
+            headers={ 'Reply-To': 'team@votewithfriends.org.nz',
                       "From": "Vote with Friends <{0}>".format(settings.EMAIL_SENDER)})
         msg.attach_alternative(html_body, "text/html")
         msg.send(fail_silently=False)

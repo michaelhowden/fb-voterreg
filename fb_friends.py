@@ -101,8 +101,8 @@ def _definitely_foreign(fb_record):
     location = fb_record.get("current_location", None)
     if not hometown or not location:
         return False
-    return hometown["country"] != "United States" and \
-        location["country"] != "United States"
+    return hometown["country"] != "New Zealand" and \
+        location["country"] != "New Zealand"
 
 def get_friends(access_token, limit=5000, offset=0):
     graph = facebook.GraphAPI(access_token)

@@ -9,9 +9,9 @@
     {% if INSTALLATION == "production" %}<script src="//cdn.optimizely.com/js/21249520.js"></script>{% endif %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{% block meta_title %}Fight for the Future{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Fight for the Future{% endblock %}">
-    <meta name="author" content="Fight for the Future">
+    <title>{% block meta_title %}Vote with Friends NZ{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Vote with Friends NZ{% endblock %}">
+    <meta name="author" content="Vote with Friends NZ">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.modal.css' %}">
@@ -90,10 +90,15 @@
 
         </div>
     </header>
-
+      <ul id="banner">
+          <li><a href="#" data-message-url="{% block banner_message_url %}{{ sharing_url }}{% url 'main:share' %}{% endblock banner_message_url %}">Invite Friends</a></li>
+          <li><a href="#" data-timeline-url="{% block banner_timeline_url %}{{ sharing_url }}{% url 'main:share' %}{% endblock banner_timeline_url %}">Post On Timeline</a></li>
+      </ul>
       {% block nav %}
           <ul id="nav">
+            <!-- 
             <li><a href="{% url 'main:missions' %}" {% if page == "missions" %}class="selected"{% endif %}>MISSIONS</a></li>
+             -->
             <li><a href="{% url 'main:my_vote' %}?force" {% if page == "my_vote" %}class="selected"{% endif %}>MY VOTE</a></li>
             <li><a href="{% url 'main:voting_blocks' %}" {% if page == "voting_blocks" %}class="selected"{% endif %}>VOTING BLOCKS</a></li>
             <li><a href="{% url 'main:invite_friends_2' %}" {% if page == "friends" %}class="selected"{% endif %}>MY FRIENDS</a></li>
@@ -105,10 +110,6 @@
         {% endfor %}
     </ul>
     <div class="content cf">
-        <ul id="banner">
-            <li><a href="#" data-message-url="{% block banner_message_url %}{{ sharing_url }}{% url 'main:share' %}{% endblock banner_message_url %}">Invite Friends</a></li>
-            <li><a href="#" data-timeline-url="{% block banner_timeline_url %}{{ sharing_url }}{% url 'main:share' %}{% endblock banner_timeline_url %}">Post On Timeline</a></li>
-        </ul>
         {% block content %}{% endblock %}
     </div>
     <div class="days-left">
@@ -117,15 +118,15 @@
       {% comment %}Translators: this is the word 'days' as used in 'x days to the election'. Use singular (we add s automatically){% endcomment %}
       <span class="cursive">{% blocktrans %}day{% endblocktrans%}{{ num_days_left|pluralize }}</span><br>
       {% comment %}Translators: this are the words "TIL THE" in "28 days till the election"{% endcomment %}
-      <span class="regular">TIL THE</span><br>
+      <span class="regular">TIL</span><br>
       {% comment %}Translators: this is the word "election" in "28 days till the election"{% endcomment %}
-      <span class="regular">ELECTION</span>
+      <span class="regular">VOTING<br>OPENS</span>
     </div>
     <a class="invite-friends" href="javascript:void(0)">
       <i class="icon-invite"></i>
       <span>Invite<br>Friends</span>
     </a>
-    <a class="feedback" href="mailto:team+vwf@fightforthefuture.org">Feedback?</a>
+    <a class="feedback" href="mailto:team@votewithfriends.org.nz">Feedback?</a>
     {% block modals %}{% endblock %}
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/bootstrap.modal.js' %}"></script>

@@ -25,7 +25,7 @@ DATABASES = {
 
 
 # Localization and internationalization
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Pacific/Auckland'
 USE_TZ = False
 USE_I18N = True
 USE_L10N = False
@@ -134,15 +134,16 @@ LOGGING = {
 
 BROKER_BACKEND = "django"
 
-FACEBOOK_APP_ID = "258722907563918"
-FACEBOOK_APP_SECRET = "0ebace487828ff1de2d68b1f7ff1a6f5"
-FACEBOOK_APP_ACCESS_TOKEN = "258722907563918|0Ua1YPkst3FUB5c32FNDSLOBqwE"
-FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriends-dev/"
-FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriends-dev:pledge'
-FACEBOOK_OG_VOTE_ACTION = 'votewithfriends-dev:vote'
+FACEBOOK_APP_ID = "235351229945652"
+FACEBOOK_APP_SECRET = "abe463b311c9fc61e9ffcd4988980adb"
+FACEBOOK_APP_ACCESS_TOKEN = "235351229945652|qo3cUIKkgSwt8XavjgqjTOPVU7M"
+FACEBOOK_CANVAS_PAGE = "http://apps.facebook.com/votewithfriendsnz-d/"
+FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriendsnz-d:pledge'
+FACEBOOK_OG_VOTE_ACTION = 'votewithfriendsnz-d:vote'
 
 VOTIZEN_API_KEY = "" # secret
-USE_FAKE_VOTIZEN_API = False
+USE_FAKE_VOTIZEN_API = True
+DISABLE_VOTIZEN_API = True
 
 SESSION_COOKIE_HTTPONLY = False
 
@@ -174,43 +175,43 @@ if environment in ["production", "staging"]:
 
     VOTIZEN_API_KEY = environ.get("VOTIZEN_API_KEY", "")
 
-    FACEBOOK_APP_ID = "220561354738022"
+    FACEBOOK_APP_ID = "555070501208112"
     FACEBOOK_APP_SECRET = environ.get("FACEBOOK_APP_SECRET", "")
     FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriends/"
 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https',)
 
-    BASE_URL = "https://voterreg-facebook.herokuapp.com"
+    BASE_URL = "https://votewithfriendsnz.herokuapp.com"
 
     KM_CODE = "8be66fb91e7ca782ba39688f6448862be1698c4e"
 
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     STATICFILES_STORAGE = THUMBNAIL_DEFAULT_STORAGE = DEFAULT_FILE_STORAGE
 
-    AWS_ACCESS_KEY_ID = 'AKIAIFSCVO2GAEACNIVA'
+    AWS_ACCESS_KEY_ID = 'AKIAJA72MYFEUHWCHPUQ'
     AWS_SECRET_ACCESS_KEY = environ.get("AWS_SECRET_ACCESS_KEY", "")
 
 if environment == 'staging':
     DEBUG = True
-    AWS_STORAGE_BUCKET_NAME = 'voterreg.fb.dev'
-    AWS_S3_CUSTOM_DOMAIN = "s3.amazonaws.com/voterreg.fb.dev"
-    FACEBOOK_APP_ID = "381227845280044"
-    FACEBOOK_APP_ACCESS_TOKEN = "381227845280044|LtITwMOMXxZcktAtz0fQQbvD0e8"
-    BASE_URL = "https://voterreg-facebook-staging.herokuapp.com"
-    SHARING_URL = BASE_URL
-    FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriends-stag/"
+    AWS_STORAGE_BUCKET_NAME = 'voterregnz.fb.dev'
+    AWS_S3_CUSTOM_DOMAIN = "s3-ap-southeast-2.amazonaws.com/voterregnz.fb.dev"
+    FACEBOOK_APP_ID = "555070501208112"
+    FACEBOOK_APP_ACCESS_TOKEN = "555070501208112|zBxkbFFEcNbJA7trXntM24x61zQ"
+    BASE_URL = "https://votewithfriendsnz-s.herokuapp.com"
+    SHARING_URL = "http://app-s.votewithfriends.org.nz"
+    FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriendsnz-s/"
     USE_FAKE_VOTIZEN_API = True
-    FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriends-stag:pledge'
-    FACEBOOK_OG_VOTE_ACTION = 'votewithfriends-stag:vote'
-    STATIC_URL = 'https://s3.amazonaws.com/voterreg.fb.dev/'
+    FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriendsnz-s:pledge'
+    FACEBOOK_OG_VOTE_ACTION = 'votewithfriendsnz-s:vote'
+    STATIC_URL = 'https://s3-ap-southeast-2.amazonaws.com/voterregnz.fb.dev/'
 
 if environment == 'production':
     FACEBOOK_APP_ID = "220561354738022"
     BASE_URL = "https://voterreg-facebook.herokuapp.com"
-    SHARING_URL = "http://app.votewithfriends.net"
-    FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriends/"
-    AWS_STORAGE_BUCKET_NAME = 'voterreg.fb'
-    AWS_S3_CUSTOM_DOMAIN = "s3.amazonaws.com/voterreg.fb"
+    SHARING_URL = "http://app.votewithfriends.org.nz"
+    FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriendsnz/"
+    AWS_STORAGE_BUCKET_NAME = 'voterregnz.fb.dev'
+    AWS_S3_CUSTOM_DOMAIN = "s3-ap-southeast-2.amazonaws.com/voterregnz.fb.dev"  
     FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriends:pledge'
     FACEBOOK_OG_VOTE_ACTION = 'votewithfriends:vote'
     FACEBOOK_APP_ACCESS_TOKEN = environ.get("FACEBOOK_APP_ACCESS_TOKEN", "")
