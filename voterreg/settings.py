@@ -198,8 +198,8 @@ if environment == 'staging':
     FACEBOOK_APP_ID = "555070501208112"
     FACEBOOK_APP_ACCESS_TOKEN = "555070501208112|zBxkbFFEcNbJA7trXntM24x61zQ"
     BASE_URL = "https://votewithfriendsnz-s.herokuapp.com"
-    SHARING_URL = BASE_URL
-    #SHARING_URL = "http://app-s.votewithfriends.org.nz"
+    #SHARING_URL = BASE_URL
+    SHARING_URL = "http://apps.votewithfriends.org.nz"
     FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriendsnz-s/"
     USE_FAKE_VOTIZEN_API = True
     FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriendsnz-s:pledge'
