@@ -14,8 +14,8 @@ $(function() {
                 enclosingSpan.find(".uninvited").hide();
                 enclosingSpan.find(".invited").show();
             });
-        var $prevUninv = $('.score .invited .num'),
-            $prevInv = $('#invited_friends').find('.num');
+        var $prevUninv = $('#uninvited_friends').find('.num'),
+            $prevInv = $('.score .invited .num');
         $prevUninv.text( parseInt($prevUninv.text(), 10) - 1);
         $prevInv.add('.score .invited .num').text( parseInt($prevInv.text(), 10) + 1);
     }
