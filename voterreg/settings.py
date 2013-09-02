@@ -149,7 +149,7 @@ SESSION_COOKIE_HTTPONLY = False
 
 # change this whenever someone with sufficient permission
 # changes it in heroku/sendgrid.
-EMAIL_SENDER = "app7299205@heroku.com"
+EMAIL_SENDER = "info@votewithfriends.org.nz"
 
 environment = environ.get("RACK_ENV", 'dev')
 
@@ -207,7 +207,7 @@ if environment == 'staging':
     STATIC_URL = 'https://s3-ap-southeast-2.amazonaws.com/voterregnz.fb.dev/'
 
 if environment == 'production':
-    FACEBOOK_APP_ID = "445513958897627"
+    FACEBOOK_APP_ID = "555070501208112"
     BASE_URL = "https://votewithfriendsnz.herokuapp.com"
     SHARING_URL = "http://app.votewithfriends.org.nz"
     FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriendsnz/"
@@ -216,7 +216,7 @@ if environment == 'production':
     FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriendsnz:pledge'
     FACEBOOK_OG_VOTE_ACTION = 'votewithfriendsnz:vote'
     FACEBOOK_APP_ACCESS_TOKEN = environ.get("FACEBOOK_APP_ACCESS_TOKEN", "")
-    STATIC_URL = 'https://s3.amazonaws.com/voterregnz.fb/'
+    STATIC_URL = 'https://s3.amazonaws.com/voterreg.fb/'
 
 if environment == 'dev':
     INSTALLATION = "dev"
