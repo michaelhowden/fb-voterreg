@@ -207,16 +207,16 @@ if environment == 'staging':
     STATIC_URL = 'https://s3-ap-southeast-2.amazonaws.com/voterregnz.fb.dev/'
 
 if environment == 'production':
-    FACEBOOK_APP_ID = "220561354738022"
-    BASE_URL = "https://voterreg-facebook.herokuapp.com"
+    FACEBOOK_APP_ID = "445513958897627"
+    BASE_URL = "https://votewithfriendsnz.herokuapp.com"
     SHARING_URL = "http://app.votewithfriends.org.nz"
     FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriendsnz/"
-    AWS_STORAGE_BUCKET_NAME = 'voterregnz.fb.dev'
-    AWS_S3_CUSTOM_DOMAIN = "s3-ap-southeast-2.amazonaws.com/voterregnz.fb.dev"  
-    FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriends:pledge'
-    FACEBOOK_OG_VOTE_ACTION = 'votewithfriends:vote'
+    AWS_STORAGE_BUCKET_NAME = 'voterregnz.fb'
+    AWS_S3_CUSTOM_DOMAIN = "s3-ap-southeast-2.amazonaws.com/voterregnz.fb"
+    FACEBOOK_OG_PLEDGE_ACTION = 'votewithfriendsnz:pledge'
+    FACEBOOK_OG_VOTE_ACTION = 'votewithfriendsnz:vote'
     FACEBOOK_APP_ACCESS_TOKEN = environ.get("FACEBOOK_APP_ACCESS_TOKEN", "")
-    STATIC_URL = 'https://s3.amazonaws.com/voterreg.fb/'
+    STATIC_URL = 'https://s3.amazonaws.com/voterregnz.fb/'
 
 if environment == 'dev':
     INSTALLATION = "dev"
