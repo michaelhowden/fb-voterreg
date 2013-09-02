@@ -1025,6 +1025,16 @@ def voting_blocks_item_mark_batch_invited(request, id):
         "badge_cutoffs": context['badge_cutoffs']
     }
 
+def privacy(request):
+    return render_to_response(
+        "privacy.html",
+        context_instance=RequestContext(request))
+
+def terms(request):
+    return render_to_response(
+        "terms.html",
+        context_instance=RequestContext(request))
+
 def test_logger_error(request):
     from main.tasks import raise_exception
     raise_exception.delay("what")

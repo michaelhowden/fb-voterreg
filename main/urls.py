@@ -42,6 +42,8 @@ urlpatterns = patterns(
     url(r"^voting_blocks/(?P<id>\d+)/mark_individual_invited$", "voting_blocks_item_mark_individual_invited", name="voting_blocks_item_mark_individual_invited"),
     url(r"^voting_blocks/(?P<id>\d+)/mark_batch_invited$", "voting_blocks_item_mark_batch_invited", name="voting_blocks_item_mark_batch_invited"),
     url(r"^voting_blocks/(?P<id>\d+)/section/(?P<section>\w+)/page$", "voting_blocks_item_page", name="voting_blocks_item_page"),
+    url(r"^privacy$", "privacy", name="privacy"),
+    url(r"^terms$", "terms", name="terms"),
 )
 
 urlpatterns += patterns(
