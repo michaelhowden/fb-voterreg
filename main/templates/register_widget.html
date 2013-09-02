@@ -16,25 +16,25 @@
   <div class="main-content-message">
 
     {% comment %}Translators: title of page where users are shown the registration widget{% endcomment %}
-    <h2>{% trans "You can register now. It will just take a few minutes." %}</h2>
+    <h2>{% trans "You can enroll now. It will just take a few minutes." %}</h2>
 
   </div>
   <div class="main-content-buttons">
 
     {% comment %}Translators: text of link to registration widget{% endcomment %}
-    <a href="http://www.theinternetvotes.org" target="internetvotes" class="btn btn-large btn-large-no-icon btn-blue">{% trans "Register Now (opens in a new window)" %}</a>
+    <a href="http://www.theinternetvotes.org" target="internetvotes" class="btn btn-large btn-large-no-icon btn-blue">{% trans "Enroll Now (opens in a new window)" %}</a>
 
   </div>
   <div class="main-content-buttons">
 
     {% comment %}Translators: text of button where user indicates they are finished with the registration widget{% endcomment %}
-    <a id="registered" href="{% url 'main:pledge' %}?from_widget=true" class="btn btn-large btn-green"><i class="icon-ok"></i> {% trans "I am done registering" %}</a>
+    <a id="registered" href="{% url 'main:pledge' %}?from_widget=true" class="btn btn-large btn-green"><i class="icon-ok"></i> {% trans "I am done enrolling" %}</a>
 
   </div>
   <div class="main-content-message">
 
     {% comment %}Translators: text of button where user indicates they want to skip the registration widget{% endcomment %}
-    <a href="{% url 'main:invite_friends_2' %}">{% trans "Skip registration and start registering friends" %}</a>
+    <a href="{% url 'main:invite_friends_2' %}">{% trans "Skip enrollment and start enrolling friends" %}</a>
 
   </div>
 </div>

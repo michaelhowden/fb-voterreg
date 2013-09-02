@@ -23,7 +23,7 @@
             {% else %}
 
                 {% comment %}Translators: title of page where users are asked to pledge to vote{% endcomment %}
-                <h2 id="do-you-pledge">{% trans "Do you pledge to vote in this election?" %}<br/>{% trans "We're depending on you!" %}</h2>
+                <h2 id="do-you-pledge">{% trans "Do you pledge to vote in the 2013 Local Body Elections?" %}<br/>{% trans "We're depending on you!" %}</h2>
 
             {% endif %}
         </div>
@@ -42,6 +42,7 @@
 
                 {% comment %}Translators: text of the button a user presses to pledge to vote{% endcomment %}
                 <a id="pledge" href="javascript:void(0)" class="btn btn-large btn-green"><i class="icon-ok"></i> {% trans "Yes, I pledge to vote" %}</a>
+                <br/><a href="{% url 'main:invite_friends_2' %}" id="deny">No, I can't pledge yet</a>
 
             {% endif %}
 
@@ -58,7 +59,10 @@
                     <p class="check-container"><label for="join-block"><input type="checkbox" name="join-block" id="join-block" checked="checked" /> Join the <strong>{{ voting_block.name }}</strong> voting block? This will share your name and email with {% if voting_block.organization_website %}<a href="{{ voting_block.organization_website }}" target="_blank">{% endif %}{{ voting_block.organization_name }}{% if voting_block.organization_website %}</a>{% endif %} (<a href="{{ voting_block.organization_privacy_policy }}" target="_blank">Privacy Policy</a>)</a></p>
                 {% endif %}
 
-                <a href="{% url 'main:invite_friends_2' %}" id="deny">No, I can't pledge yet</a>
+                <p>
+                    <a style="float: left;" href="http://www.vote.co.nz/2013/find/">Who can you vote for?</a>
+                    <a style="float: right;" href="http://www.nzpost.co.nz/tools/postshop-kiwibank-locator?filter=postbox">Find your nearest post box</a>
+                </p>
 
             {% endif %}
 

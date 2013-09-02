@@ -76,7 +76,7 @@ BATCH_TYPES = (
     (BATCH_NEARBY, _("Nearby")),
 
     # Translators: Group name for friends Votizen says are unregistered (80% of the time)
-    (BATCH_REGULAR, _("Not registered yet")),
+    (BATCH_REGULAR, _("Not enrolled yet")),
 
     # Translators: Group name for friends we randomly select to quickly fill out the invite friends page
     (BATCH_RANDOM, _("Not pledged yet")),
@@ -527,7 +527,7 @@ class LastAppNotification(models.Model):
                 count - 2, 
                 "s" if count > 3 else "",
                 "have" if count > 3 else "has")
-            template = "{{{0}}}, {{{1}}} and {2} other friend{3} {4}".format(
+            template = "@[{0}], @[{1}] and {2} other friend{3} {4}".format(
                 friends[0].fb_uid, friends[1].fb_uid,
                 count - 2, 
                 "s" if count > 3 else "",
@@ -535,11 +535,11 @@ class LastAppNotification(models.Model):
         elif count == 2:
             email_text = u"{0} and {1} have".format(
                 friends[0].name, friends[1].name)
-            template = "{{{0}}} and {{{1}}} have".format(
+            template = "@[{0}] and @[{1}] have".format(
                 friends[0].fb_uid, friends[1].fb_uid)
         else:
             email_text = u"{0} has".format(friends[0].name)
-            template = "{{{0}}} has".format(friends[0].fb_uid)
+            template = "@[{0}] has".format(friends[0].fb_uid)
         template += template_suffix
         email_text += template_suffix
         return for_voted, email_text, template

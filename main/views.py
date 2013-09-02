@@ -277,7 +277,7 @@ def my_vote_pledge(request):
             messages.add_message(
                 request, messages.INFO,
                 # Translators: message displayed to users in green bar when they register to vote
-                _("Thank you for registering to vote!"))
+                _("Thank you for enrolling to vote!"))
     voting_block = _voting_block_from_session(request.session)
     return render_to_response("my_vote_pledge.html", {
         'page': 'my_vote',
@@ -577,7 +577,7 @@ def im_actually_registered(request):
         request, messages.INFO,
 
         # Translators: message displayed to users in green bar when they are found to already be registered to vote
-        _("You're now marked as registered to vote.")
+        _("You're now marked as enrolled to vote.")
     )
     return {"next": reverse("main:pledge")}
 
@@ -842,7 +842,7 @@ def voting_blocks_create(request):
 
 def _members_qs(user, section, voting_block):
     if section == 'members':
-        return User.objects.filter(votingblockmember__voting_block=voting_block)
+        return User.objects.filter(votingblockmember__voting_block=voting_block, votingblockmember__joined__isnull=False)
     elif section == 'voted':
         return User.objects.filter(votingblockmember__voting_block=voting_block, votingblockmember__joined__isnull=False, date_voted__isnull=False)
     elif section == 'not_voted':

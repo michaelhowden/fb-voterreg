@@ -76,8 +76,8 @@
             {% if section == "invited" %}{% blocktrans %}You haven't invited any friends. Why don't you <a href="{{ invite_url }}">invite some</a>?{% endblocktrans %}{% endif %}
             {% comment %}Translators: message displayed on Invite Friends page when the user has no pledged friends{% endcomment %}
             {% if section == "pledged" %}{% blocktrans %}None of your friends have pledged. <a href="{{ invite_url }}">Invite some more friends</a> to see if they will.{% endblocktrans %}{% endif %}
-            {% comment %}Translators: message displayed on Invite Friends page when the user has no registered friends{% endcomment %}
-            {% if section == "registered" %}{% blocktrans %}None of your friends are registered to vote. Do your civic duty and <a href="{{ invite_url }}">make sure they're registered</a>!{% endblocktrans %}{% endif %}
+            {% comment %}Translators: message displayed on Invite Friends page when the user has no enrolled friends{% endcomment %}
+            {% if section == "registered" %}{% blocktrans %}None of your friends are enrolled to vote. Do your civic duty and <a href="{{ invite_url }}">make sure they're enrolled</a>!{% endblocktrans %}{% endif %}
             {% comment %}Translators: message displayed on Invite Friends page when the user has no friends who have voted{% endcomment %}
             {% if section == "voted" %}{% blocktrans %}None of your friends have told us that they're voting. Can you <a href="{{ invite_url }}">make sure they do so</a>?{% endblocktrans %}{% endif %}
             {% comment %}Translators: message displayed on Invite Friends page when the user has no friends who haven't voted{% endcomment %}

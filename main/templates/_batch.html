@@ -9,17 +9,17 @@
         {% if batch.type == 1 %}
             <h2>{{ batch.title }}</h2>
             {% comment %}Translators: Invite text sent to friends too young to vote in 2008{% endcomment %}
-            <p>{% blocktrans %}I'm sending this to all my friends who were too young to vote in '08, but are old enough now. Click here to register and pledge to vote!{% endblocktrans %}</p>
+            <p>{% blocktrans %}I'm sending this to all my friends who were too young to vote in '08, but are old enough now. Click here to enroll and pledge to vote!{% endblocktrans %}</p>
 
         {% elif batch.type == 2 %}
             <h2>{{ batch.title }}</h2>
             {% comment %}Translators: Invite text sent to friends who have moved out of state{% endcomment %}
-            <p>{% blocktrans %}I'm sending this to all my friends who moved out of state. Use this to make sure you're registered and pledged to vote this year!{% endblocktrans %}</p>
+            <p>{% blocktrans %}I'm sending this to all my friends who moved out of state. Use this to make sure you're enrolled and pledged to vote this year!{% endblocktrans %}</p>
 
         {% elif batch.type == 3 %}
             <h2>{{ batch.title }}</h2>
             {% comment %}Translators: Invite text sent to friends who live in the same city as the user{% endcomment %}
-            <p>{% blocktrans %}If you get a ton of {{ batch.city }} friends registered, who knows? Maybe you could elect one of them mayor!{% endblocktrans %}</p>
+            <p>{% blocktrans %}If you get a ton of {{ batch.city }} friends enrolled, who knows? Maybe you could elect one of them mayor!{% endblocktrans %}</p>
 
         {% elif batch.type == 4 %}
             {% choice %}

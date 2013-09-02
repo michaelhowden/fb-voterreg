@@ -37,7 +37,7 @@
             {% endif %}
 
             {% if voting_block.has_backing_organization %}
-                <p class="organization">This voting block belongs to an organization: {% if voting_block.organization_website %}<a target="_blank" href="{{ voting_block.organization_website }}">{% endif %}"{{ voting_block.organization_name }}"{% if voting_block.organization_website %}</a>{% endif %}. When you join, they can use your name and email according to their <a target="_blank" href="{{ voting_block.organization_privacy_policy }}">Privacy policy</a>.</p>
+                <p class="organization">This voting block belongs to an organisation: {% if voting_block.organization_website %}<a target="_blank" href="{{ voting_block.organization_website }}">{% endif %}"{{ voting_block.organization_name }}"{% if voting_block.organization_website %}</a>{% endif %}. When you join, they can use your name and email according to their <a target="_blank" href="{{ voting_block.organization_privacy_policy }}">Privacy policy</a>.</p>
             {% endif %}
 
             <div class="social">
