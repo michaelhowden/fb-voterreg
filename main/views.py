@@ -784,6 +784,7 @@ def _voting_blocks_search(user, myvbs, filter=None, text=None, skip=0, take=10):
 
     result['list'] = []
     for item in query[skip:skip+take]:
+        item.num_members = item.votingblockmember_set.filter(joined__isnull=False).count()
         item.joined = item.id in myvbids
         result['list'].append(item)
 
@@ -792,7 +793,10 @@ def _voting_blocks_search(user, myvbs, filter=None, text=None, skip=0, take=10):
 
 def voting_blocks(request):
     user = User.objects.get(fb_uid=request.facebook["uid"])
-    myvbs = VotingBlock.objects.filter(votingblockmember__member=user).order_by('-votingblockmember__joined')
+    myvbs = VotingBlock.objects.filter(votingblockmember__member=user, 
+                                       votingblockmember__joined__isnull=False).order_by('-votingblockmember__joined')
+    for myvb in myvbs:
+        myvb.num_members = myvb.votingblockmember_set.filter(joined__isnull=False).count()
     context = {
         "page": "voting_blocks",
         "voting_block_note": request.COOKIES.get('voting_block_note', None),
@@ -906,7 +910,7 @@ def voting_blocks_item(request, id, section=None):
         "sections": sections,
         "section": section,
         "voting_block": voting_block,
-        "voting_block_members_count": VotingBlockMember.objects.filter(voting_block_id=id).count(),
+        "voting_block_members_count": VotingBlockMember.objects.filter(voting_block_id=id, joined__isnull=False).count(),
         "voting_block_members_today_count": VotingBlockMember.objects.filter(voting_block_id=id,
             joined__gt=datetime.combine(datetime.now(), time.min)).count(),
         "voting_block_joined": voting_block_member and voting_block_member.joined
