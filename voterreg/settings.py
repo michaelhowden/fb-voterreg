@@ -207,7 +207,7 @@ if environment == 'staging':
     STATIC_URL = 'https://s3-ap-southeast-2.amazonaws.com/voterregnz.fb.dev/'
 
 if environment == 'production':
-    FACEBOOK_APP_ID = "555070501208112"
+    FACEBOOK_APP_ID = "445513958897627"
     BASE_URL = "https://votewithfriendsnz.herokuapp.com"
     SHARING_URL = "http://app.votewithfriends.org.nz"
     FACEBOOK_CANVAS_PAGE = "https://apps.facebook.com/votewithfriendsnz/"
