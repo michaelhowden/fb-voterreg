@@ -312,7 +312,7 @@ def my_vote_vote(request):
             if explicit_share:
                 og_url = opengraph_url(request, settings.FACEBOOK_OG_VOTE_ACTION)
                 share = requests.post(og_url, params={
-                        'election_obj': settings.BASE_URL + reverse('vote_object'),
+                        'election': settings.BASE_URL + reverse('vote_object'),
                         'access_token': request.facebook['access_token'],
                         'fb:explicitly_shared': 'true',
                         })
@@ -498,7 +498,7 @@ def submit_pledge(request):
     if explicit_share:
         og_url = opengraph_url(request, settings.FACEBOOK_OG_PLEDGE_ACTION)
         share = requests.post(og_url, params={
-            'vote_obj': settings.BASE_URL + reverse('pledge_object'),
+            'vote': settings.BASE_URL + reverse('pledge_object'),
             'access_token': request.facebook['access_token'],
             'fb:explicitly_shared': 'true',
         })
