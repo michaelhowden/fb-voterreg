@@ -6,7 +6,7 @@ $(function() {
         $('#sample-description').text($('#id_description').val() == '' ? 'Description / share text' : $('#id_description').val());
     });
     $('#id_organization_name').bind('keyup change', function(){
-        $('#sample-organization-name').text($('#id_organization_name').val() == '' ? 'Organization Name' : $('#id_organization_name').val());
+        $('#sample-organization-name').text($('#id_organization_name').val() == '' ? 'Organisation Name' : $('#id_organization_name').val());
     });
     $('#id_organization_website').bind('keyup change', function(){
         $('#sample-organization-website').attr('href', $('#id_organization_website').val() == '' ? '#' : $('#id_organization_website').val());

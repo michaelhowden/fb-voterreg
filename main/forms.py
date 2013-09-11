@@ -32,7 +32,7 @@ class VotingBlockForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'placeholder': 'Voting block name'}),
             'description': forms.TextInput(attrs={'placeholder': 'Description / share text'}),
             'icon': forms.FileInput(attrs={'data-change-text': 'Change Image', 'data-set-text': 'Select Image'}),
-            'organization_name': forms.TextInput(attrs={'placeholder': '"Organization Name"'}),
+            'organization_name': forms.TextInput(attrs={'placeholder': '"Organisation Name"'}),
             'organization_website': forms.TextInput(attrs={'placeholder': 'Website'}),
             'organization_privacy_policy': forms.TextInput(attrs={'placeholder': 'Link to Privacy Policy'})
         }

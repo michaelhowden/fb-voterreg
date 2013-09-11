@@ -46,9 +46,10 @@
     <div class="note">
         <strong>Note</strong>: Before making a new block, search <a href="{% url 'main:voting_blocks' %}">here</a> to be sure someone else hasn't already set one up.
         If you create a voting block for a specific location, include the location the title
-        (like this: Girl Scout parents of Westchester MA").
+        (like this: Parent Teachers Association of Taumaranui").
     </div>
-    <h2>Collect contact information? <em>(Optional for candidates & qualifying organisations only. <a role="button" data-toggle="modal" href="#voting-block-create-organization-modal">Learn more</a>)</em></h2>
+    <h2>Collect contact information? <em><br/>
+    (Optional for candidates & qualifying organisations with a published privacy policy only. <a role="button" data-toggle="modal" href="#voting-block-create-organization-modal">Learn more</a>)</em></h2>
     <div class="block cf">
         <div class="data">
             <div class="field{% if form.organization_name.errors %} field-error{% endif %}">
@@ -68,7 +69,7 @@
             <p class="info">{% trans "Your voting block will show this notice:" %}</p>
             <p class="organization">
                 This voting block belongs to an organisation:
-                <a target="_blank" id="sample-organization-website" href="{% if form.organization_website.value %}{{ form.organization_website.value }}{% else %}#{% endif %}"><span id="sample-organization-name">{% if form.organization_name.value %}{{ form.organization_name.value }}{% else %}Organization Name{% endif %}</span></a>.
+                <a target="_blank" id="sample-organization-website" href="{% if form.organization_website.value %}{{ form.organization_website.value }}{% else %}#{% endif %}"><span id="sample-organization-name">{% if form.organization_name.value %}{{ form.organization_name.value }}{% else %}Organisation Name{% endif %}</span></a>.
                 When you join, they can use your name and email according to their <a target="_blank" id="sample-organization-privacy-policy" href="{% if form.organization_privacy_policy.value %}{{ form.organization_privacy_policy.value }}{% else %}#{% endif %}">Privacy Policy</a>.</p>
         </div>
     </div>
