@@ -12,7 +12,7 @@ def add_settings(request):
              "INSTALLATION": settings.INSTALLATION }
 
 def add_days_left(request):
-    return { "num_days_left": (date(2013, 9, 20) - date.today()).days }
+    return { "num_days_left": (date(2013, 10, 12) - date.today()).days }
 
 def add_fbuid(request):
     if hasattr(request, "facebook") and request.facebook is not None:
